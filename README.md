@@ -13,6 +13,8 @@ mplayer,
 
 There are many keyboard commands for mplayer:
 
-SPACE : Pause 
-CTR+C : Change song 
-ARROW : Fast Forward or Rewind 
+SPACE : Pause
+
+CTR+C : Change song
+
+ARROW : Fast Forward or Rewind
