@@ -5,20 +5,30 @@ from datetime import datetime
 import  pywapi
 import string
 import pynotify
+import subprocess
+
+import commands
+cmd = "whoami"
+output = commands.getoutput(cmd)
+
 
 now = datetime.now()
 curTime = now.hour , now.minute
 espeak.synth("Welcome to khanrad radio. The time is "+str(curTime))
 time.sleep(1.5)
+
+music_path = os.path.join("/home/",output,"Music/")
+
 espeak.synth("Please choose a folder")
 print 'Press CTRL+C to change the current song (Terminal)'
-print os.listdir("/home/adam/Music")
+print os.listdir(music_path)
+
 folder = raw_input("Choose a folder: ")
-time.sleep(3.5)
+time.sleep(3)
 
 def rndmp3 ():
-   randomfile = random.choice(os.listdir("/home/adam/Music/"+folder+"/"))
-   file = ' /home/adam/Music/'+folder+'/'+ randomfile
+   randomfile = random.choice(os.listdir("/home/"+output+"/Music/"+folder+"/"))
+   file = ' /home/'+output+'/Music/'+folder+'/'+ randomfile
 
    pynotify.init( "Radio" )
    song = pynotify.Notification('Playing '+randomfile)
@@ -31,6 +41,8 @@ def rndmp3 ():
    time.sleep(2)
 
 while True:
+
+   rndmp3()
 
    pynotify.init( "Radio" )
    ranNum = random.randrange(0,6)
@@ -66,5 +78,3 @@ while True:
       mssg.show()
    except NameError:
       pass
-
-   rndmp3()
