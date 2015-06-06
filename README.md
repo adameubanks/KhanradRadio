@@ -5,7 +5,13 @@ You choose a folder and it randomly selects a song for you. Inbetween songs, Kha
 
 Dependencies:
 
-python 2.7
-pynotify
-espeak
-pywapi
+python 2.7,
+pynotify,
+espeak,
+pywapi,
+mplayer, 
+
+There are many keyboard commands for mplayer:
+SPACE : Pause
+CTR+C : Change song
+ARROW : Fast Foward or Rewind
