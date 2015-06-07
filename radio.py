@@ -61,7 +61,7 @@ while True:
       mssg = pynotify.Notification('The time is '+str(curTime))
 
    if ranNum == 3:
-      weather_com_result = pywapi.get_weather_from_weather_com('22801')
+      weather_com_result = pywapi.get_weather_from_weather_com()#IMPORT ZIPCODE HERE
       espeak.synth("The weather is " + string.lower(weather_com_result['current_conditions']['text'])
       + " at " +weather_com_result['current_conditions']['temperature']
       + " degrees celsius \n\n")
